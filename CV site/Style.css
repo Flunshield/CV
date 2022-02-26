@@ -1,0 +1,166 @@
+@keyframes glissement {
+    from {
+        margin-top: 100%;
+        width: 400%;
+    }
+  
+    to {
+      margin-bottom: 0%;
+      width: 100%;
+    }
+  }
+
+body{
+    background-color:#D46F4D;
+    animation-direction: initial;
+    animation-duration: 0s;
+    animation-name: glissement;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: hsla(7, 86%, 14%, 0.612);
+    border-radius: 5px;
+    float: top;
+}
+
+nav ul
+{
+    list-style-type: none;
+    display: flex;
+}
+
+nav li
+{
+    margin-right: 15px;
+}
+
+nav a
+{
+    font-size: 1.3em;
+    color:#FFBF66;
+    text-decoration: none;
+}
+
+nav a:hover
+{
+    color: #FFBF66;
+    text-decoration: underline;
+}
+
+header h1{
+    color: #FFBF66;
+    font-family: Impact, "Arial Black", Arial, Verdana, sans-serif;
+}
+
+#fotoprofile{
+    width: 15%;
+    float: right;
+    margin: 15px;
+    border-radius: 50%;
+}
+
+.test
+{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.test img
+{
+    width: 10%;
+    height: 25%;
+    margin-left: 2%;
+}
+
+section
+{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+section h1{
+    text-align: center;
+    background-color: #430c059c;
+    border-radius: 5px;
+    color: #FFBF66;
+}
+section h2{
+    font-style: oblique;
+    text-decoration: underline;
+    color: #FFBF66;
+}
+
+section li{
+    font-style: italic;
+    color: #FFBF66;
+}
+
+#Compt{
+    display:flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    height: 700px;
+}
+
+#Contact{
+    display:flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    text-align:center;
+    height: 150px;
+}
+
+@media all and (max-width: 1024px)
+{
+    nav
+    {
+        width: auto;
+        text-align: left;
+    }
+    
+    nav ul
+    {
+        flex-direction: column;
+    }
+    nav li
+    {
+        padding-left: 4px;
+    }
+    nav a
+    {
+        margin-bottom: 0px;
+    }
+    
+    nav a:hover
+    {
+        border-bottom: 0;
+    }
+
+    #fotoprofile{
+        width: 35%;
+        float: right;
+        margin: 15px;
+        border-radius: 50%;
+    }
+
+    .test img
+    {
+        width: 20%;
+        margin-left: 2%;
+    }
+    #Compt{
+        display:flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        font-size: 0.8em;
+        height: 550px;
+    }
+    #Contact{
+        display:flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        text-align:center;
+        font-size: 0.8em;
+    }
+}
