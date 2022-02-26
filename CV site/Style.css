@@ -13,7 +13,7 @@
 body{
     background-color:#D46F4D;
     animation-direction: initial;
-    animation-duration: 0s;
+    animation-duration: 3s;
     animation-name: glissement;
 }
 header{
