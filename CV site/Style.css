@@ -11,18 +11,17 @@
   }
 
 body{
-    background-color:#D46F4D;
+    background-color:#ffffff93;
     animation-direction: initial;
-    animation-duration: 3s;
+    animation-duration: 0s;
     animation-name: glissement;
 }
 header{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: hsla(7, 86%, 14%, 0.612);
+    background-color: hsla(0, 0%, 0%, 0.788);
     border-radius: 5px;
-    float: top;
 }
 
 nav ul
@@ -38,7 +37,7 @@ nav li
 
 nav a
 {
-    font-size: 1.3em;
+    font-size: 1em;
     color:#FFBF66;
     text-decoration: none;
 }
@@ -51,7 +50,8 @@ nav a:hover
 
 header h1{
     color: #FFBF66;
-    font-family: Impact, "Arial Black", Arial, Verdana, sans-serif;
+    font-family:  "Arial Black", Arial, Verdana, sans-serif;
+    text-align: center;
 }
 
 #fotoprofile{
@@ -64,26 +64,39 @@ header h1{
 .test
 {
     display: flex;
-    flex-wrap: nowrap;
     align-items: center;
 }
-.test img
+.test #afd
 {
-    width: 10%;
-    height: 25%;
-    margin-left: 2%;
+    width: 100%;
+    height: auto;
 }
 
-section
+.test #syscom
 {
-    margin-left: 5%;
-    margin-right: 5%;
+    width: 15%;
+    height: auto;
+    border-radius: 15px;
 }
+
+.SYSCOM h2{
+    width: 600px;
+}
+
+.AFDTECH h2{
+    width: 250px;
+}
+
 section h1{
-    text-align: center;
-    background-color: #430c059c;
+    background-color: hsla(0, 0%, 0%, 0.788);
     border-radius: 5px;
     color: #FFBF66;
+    height: 100px;
+    position: center;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
 }
 section h2{
     font-style: oblique;
@@ -95,12 +108,30 @@ section li{
     font-style: italic;
     color: #FFBF66;
 }
+#Experience
+{
+    background-color: hsla(0, 0%, 0%, 0.507);
+    border-radius: 5px;
+    height: 700px;
 
+}
+#Formations
+{
+    background-color: hsla(0, 0%, 0%, 0.507);
+    border-radius: 5px;
+    height: 550px;
+
+}
+#Compétences
+{
+    background-color: hsla(0, 0%, 0%, 0.507);
+    border-radius: 5px;
+}
 #Compt{
     display:flex;
     justify-content: space-around;
     align-items: flex-start;
-    height: 700px;
+    height: 650px;
 }
 
 #Contact{
@@ -108,7 +139,12 @@ section li{
     justify-content: space-around;
     align-items: flex-start;
     text-align:center;
-    height: 150px;
+    height: 100px;
+}
+
+#ZoneContact{
+    background-color: hsla(0, 0%, 0%, 0.507);
+    border-radius: 5px;
 }
 
 @media all and (max-width: 1024px)
