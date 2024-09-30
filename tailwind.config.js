@@ -15,7 +15,7 @@ module.exports = {
         secondary: '#E3E8EF',
         tertiary: '#FFEDD5',
         error: '#de2916',
-        red: '#D63864',
+        red: '#e94662',
       },
     },
   },

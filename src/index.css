@@ -16,7 +16,7 @@
   }
 
   main {
-    @apply px-4 min-h-screen sm:px-0 space-y-16 w-full bg-cyan-700;
+    @apply px-4 min-h-screen sm:px-0 space-y-16 w-full bg-black;
     background-image: radial-gradient(
             hsla(0, 0%, 84.3%, 0.25) 1px,
             transparent 0
