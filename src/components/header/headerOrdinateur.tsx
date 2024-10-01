@@ -39,7 +39,7 @@ const HeaderOrdinateur: React.FC<HeaderOrdinateurProps> = ({
                     :
                     <div className="flex start-0 top-0 absolute w-full">
                         <div className="flex justify-between w-full">
-                            <a className="text-white text-2xl m-3 font-bold ml-10" href="/">BERTRAND Julien</a>
+                            <a className="text-secondary text-2xl m-3 font-bold ml-10" href="/">BERTRAND Julien</a>
                             <div className="flex flex-col sm:flex-row">
                                 <div className="flex items-baseline">
                                     <Button

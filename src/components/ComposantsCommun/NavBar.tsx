@@ -61,13 +61,13 @@ const NavBar: React.FC<HeaderOrdinateurProps> = ({
             >
                 <img src={iconeMenu} alt="icone menu" className={clsx(isOpen ? "hidden" : "w-10 mt-2")}/>
             </Button>
-            <h1 className={clsx(isOpen ? "hidden" : "ml-10", "text-white text-2xl m-3 font-bold")}>BERTRAND Julien</h1>
+            <h1 className={clsx(isOpen ? "hidden" : "ml-10", "text-secondary text-2xl m-3 font-bold")}>BERTRAND Julien</h1>
             {isOpen && (
                 <Card
                     className="w-2/3 md:w-1/3 border-0 border-r border-b h-screen rounded-tr-2xl rounded-br-2xl rounded-tl-none rounded-bl-none top-0 bg-primary border-white">
-                    <nav className="block flex-col text-white text-2xl font-bold">
+                    <nav className="block flex-col text-secondary text-2xl font-bold">
                         <div className="flex flex-row items-baseline justify-between">
-                            <h1 className="text-white text-2xl m-3 font-bold">
+                            <h1 className="text-secondary text-2xl m-3 font-bold">
                                 BERTRAND Julien
                             </h1>
                             <Button

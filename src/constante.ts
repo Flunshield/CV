@@ -13,6 +13,8 @@ export const EXPERIENCES_URL = "/experiences";
 export const COMPETENCES_URL = "/competences";
 export const CONTACT_URL = "/contact";
 export const ACCEUIL_URL = "/";
+export const LINKEDIN_URL = "https://linkedin.com/in/julien-bertrand-847264166";
+export const GITHUB_URL = "https://github.com/Flunshield";
 
 // LIEN VERS LES DIFFERENTES FORMATIONS
 export const MASTERE_URL = "https://www.ecole-isitech.com/formations/mastere-esi/"
@@ -88,7 +90,7 @@ export const FORMATIONS = [
         onClick: mastereOnClick,
         RNCP: true,
         titleRNCP: "Expert en Systèmes d’Information",
-        RNCPCode: "RNCP34471"
+        RNCPCode: "34471",
     },
     {
         id: 2,
@@ -100,7 +102,7 @@ export const FORMATIONS = [
         onClick: licenceOnClick,
         RNCP: true,
         titleRNCP: "Responsable de Projets Informatiques",
-        RNCPCode: "RNCP38478"
+        RNCPCode: "38478"
     },
     {
         id: 3,
@@ -300,7 +302,7 @@ export const PROJETS = [
         title: "JwtVerif",
         commentaire: "",
         description: "Un outil simple pour vérifier les jetons JWT (JSON Web Token) en ligne. Les jetons JWT sont un moyen sûr",
-        technologies: ["typescript"],
+        technologies: ["TypeScript"],
         githubLink: "https://github.com/Flunshield/JwtVerif",
         demoLink: ""
     },
@@ -331,6 +333,6 @@ export const TECHNOLOGIES = [
     "Css",
     "php",
     "MySQL",
-    "typescript",
+    "TypeScript",
     "Tous"
 ];

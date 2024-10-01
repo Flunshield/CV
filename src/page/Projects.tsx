@@ -15,13 +15,13 @@ const Projects = () => {
 
     return (
         <Layout>
-            <div className={clsx(isMobile ? "" : "mt-60", "container mx-auto py-8")}>
-                <h1 className="text-3xl font-bold text-center text-secondary mb-8">Mes Projets</h1>
-                <div className="flex flex-col space-y-8">
+            <div className={clsx(isMobile ? "py-6 px-4" : "mt-32 container mx-auto py-12")}>
+                <h1 className="text-4xl font-extrabold text-center text-secondary mb-10">Mes Projets</h1>
+                <div className="flex flex-col space-y-10">
                     <TechnologiesFilter onFilterChange={setSelectedTechnology}/>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
                         {filteredProjects.map(project => (
-                            <ProjectCard key={project.id} project={project}/>
+                            <ProjectCard key={project.id} project={project} className="transition-transform duration-300 ease-in-out shadow-lg hover:shadow-2xl"/>
                         ))}
                     </div>
                 </div>

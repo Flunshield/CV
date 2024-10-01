@@ -1,7 +1,13 @@
-import React, {useState} from "react";
-import {TECHNOLOGIES} from "../../constante.ts";
+import React, { useState } from "react";
+import { TECHNOLOGIES } from "../../constante.ts";
+import clsx from "clsx";
 
-const TechnologiesFilter = ({onFilterChange}: { onFilterChange: (tech: string) => void }) => {
+interface TechnologiesFilterProps {
+    onFilterChange: (tech: string) => void;
+    className?: string;  // Ajout de la prop className
+}
+
+const TechnologiesFilter: React.FC<TechnologiesFilterProps> = ({ onFilterChange, className }) => {
     const [selectedOption, setSelectedOption] = useState("Tous");
 
     const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -11,15 +17,15 @@ const TechnologiesFilter = ({onFilterChange}: { onFilterChange: (tech: string) =
     };
 
     return (
-        <div className="flex flex-col items-start w-auto">
-            <label htmlFor="technologies" className="mb-2 text-white">
+        <div className={clsx("flex flex-col items-start w-auto", className)}>
+            <label htmlFor="technologies" className="mb-2 text-secondary text-lg font-bold">
                 Catégorie
             </label>
             <select
                 id="technologies"
                 value={selectedOption}
                 onChange={handleChange}
-                className="px-4 py-2 bg-white w-auto border-2 border-gray-400 rounded text-primary focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="px-4 py-2 bg-white w-auto border-2 rounded-xl text-primary focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             >
                 <option value="Tous">Tous</option>
                 {TECHNOLOGIES.map((tech, index) => (
@@ -29,4 +35,5 @@ const TechnologiesFilter = ({onFilterChange}: { onFilterChange: (tech: string) =
         </div>
     );
 }
-    export default TechnologiesFilter;
+
+export default TechnologiesFilter;

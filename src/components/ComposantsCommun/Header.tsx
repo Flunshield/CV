@@ -29,7 +29,7 @@ const Header = () => {
         navigate(CONTACT_URL);
     };
 
-    const btnCss = "border-2 text-white text-1xl m-3 border-2 border-white rounded-md p-1 w-52 font-bold hover:bg-secondary hover:text-black hover:border-black transition duration-500 ease-in-out";
+    const btnCss = "border-2 text-secondary text-1xl m-3 border-2 border-white rounded-md p-1 w-52 font-bold hover:bg-secondary hover:text-black hover:border-black transition duration-500 ease-in-out";
 
     const currentUrl = window.location.href;
     const segments = currentUrl.split('/');
