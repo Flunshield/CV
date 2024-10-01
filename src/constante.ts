@@ -217,7 +217,7 @@ export const PROJETS = [
     {
         id: 11,
         title: "CodeArena-ApiTesting",
-        commentaire: "Api de test réaliser dans le cadre de mon projet de 1ere année en Mastère ESI",
+        commentaire: "Api de test développé dans le cadre de mon projet de 1ere année en Mastère ESI",
         description: "Cette API permet de tester du code (uniquement JavaScript pour le moment).",
         technologies: ["NestJs", "Tailwind CSS", "TypeScript", "Dockers", "javascript"],
         githubLink: "https://github.com/Flunshield/CodeArena-ApiTesting",
