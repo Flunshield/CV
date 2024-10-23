@@ -67,7 +67,7 @@ const HeaderOrdinateur: React.FC<HeaderOrdinateurProps> = ({
                                             <Button
                                                 type="button"
                                                 id="competence"
-                                                className={clsx(btnCss, currentPage === "competence" ? "bg-secondary text-black" : "")}
+                                                className={clsx(btnCss, currentPage === "competences" ? "bg-secondary text-black" : "")}
                                                 onClick={handleClickCompetence}
                                             >
                                                 Compétences
