@@ -15,6 +15,7 @@ export const CONTACT_URL = "/contact";
 export const ACCEUIL_URL = "/";
 export const LINKEDIN_URL = "https://linkedin.com/in/julien-bertrand-847264166";
 export const GITHUB_URL = "https://github.com/Flunshield";
+export const CONDITION_GENERALES_URL = "/conditionGenerales";
 
 // LIEN VERS LES DIFFERENTES FORMATIONS
 export const MASTERE_URL = "https://www.ecole-isitech.com/formations/mastere-esi/"

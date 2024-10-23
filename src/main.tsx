@@ -5,11 +5,12 @@ import Home from "./page/Home.tsx";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import NotFoundPage from "./page/NotFoundPage.tsx";
 import Formation from "./page/Formation.tsx";
-import {ACCEUIL_URL, COMPETENCES_URL, CONTACT_URL, EXPERIENCES_URL, FORMATION_URL, PROJECTS_URL} from "./constante.ts";
+import {ACCEUIL_URL, COMPETENCES_URL, CONDITION_GENERALES_URL, CONTACT_URL, EXPERIENCES_URL, FORMATION_URL, PROJECTS_URL} from "./constante.ts";
 import Experience from "./page/Experience.tsx";
 import Competence from "./page/Competence.tsx";
 import Projects from "./page/Projects.tsx";
 import Contact from "./page/Contact.tsx";
+import ConditionsGenerales from "./page/ConditionsGenerales.tsx";
 
 const router = createBrowserRouter([
     {
@@ -42,6 +43,11 @@ const router = createBrowserRouter([
         element: <Contact/>,
         errorElement: <NotFoundPage/>
     },
+    {
+        path: CONDITION_GENERALES_URL,
+        element: <ConditionsGenerales/>,
+        errorElement: <NotFoundPage/>
+    }
 ])
 
 ReactDOM.createRoot(document.getElementById("root")!).render(

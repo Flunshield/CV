@@ -7,7 +7,8 @@ import {
     FORMATION_URL,
     PROJECTS_URL,
     LINKEDIN_URL,
-    GITHUB_URL
+    GITHUB_URL,
+    CONDITION_GENERALES_URL
 } from "../../constante.ts";
 import {FaEnvelope, FaMapMarkerAlt, FaPhone, FaLinkedin, FaGithub} from 'react-icons/fa'; // Importez les icônes nécessaires
 import {goToEmail, goToMap, goToPhone} from "../../project/helper.ts";
@@ -51,9 +52,10 @@ const Footer: React.FC<FooterProps> = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex flex-row text-center justify-between text-sm m-5">
-                <p className="mr-5">© {year} BERTRAND Julien. Tous droits réservés.</p>
-                <p>Version 1</p>
+            <div className="flex flex-row text-center justify-arround text-sm m-5">
+                <p className="flex-2">© {year} BERTRAND Julien. Tous droits réservés.</p>
+                <a href={CONDITION_GENERALES_URL} className="hover:underline flex-1">Conditions Générales</a>
+                <p className="flex-2">Version 1</p>
             </div>
         </footer>
     );
