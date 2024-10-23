@@ -27,35 +27,35 @@ const Formation = () => {
 
     return (
         <Layout>
-            <div className={clsx(isMobile ? "" : "mt-40", "flex flex-col items-center")}>
-                <h1 className="text-6xl mb-10 font-extrabold text-secondary">Mes Formations</h1>
-                <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 m-5">
+            <div className={clsx(isMobile ? "mt-20 mb-20" : "mt-40 mb-20", "flex flex-col items-center")}>
+                <h1 className="text-6xl mb-12 font-extrabold text-secondary">Mes Formations</h1>
+                <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-5">
                     {FORMATIONS.map((experience: FormationProps) => (
                         <li
                             key={experience.id}
-                            className="flex flex-col items-center cursor-pointer p-6 rounded-2xl transition duration-300 bg-white transform hover:scale-105 shadow-md"
+                            className="flex flex-col items-center cursor-pointer p-6 rounded-3xl transition-all duration-300 bg-white transform hover:scale-105 shadow-lg hover:shadow-2xl"
                             onClick={experience.onClick}
                         >
-                            <div className="flex flex-col md:flex-row">
+                            <div className="flex flex-col md:flex-row w-full">
                                 <div className="flex w-full align-baseline">
                                     <img
                                         src={experience.logo}
                                         alt={`Logo de ${experience.title}`}
-                                        className="rounded-xl p-2 w-32 h-12 mr-4"
+                                        className="rounded-lg p-3 w-36 h-14 mr-4 object-contain"
                                     />
                                     <div className="flex flex-col justify-center">
-                                        <h2 className="text-2xl font-bold text-primary">{experience.date}</h2>
-                                        <p className="text-xl font-bold text-primary">{experience.title}</p>
-                                        <p className="text-xl text-primary">
+                                        <h2 className="text-xl font-bold text-gray-800">{experience.date}</h2>
+                                        <p className="text-lg font-bold text-gray-700">{experience.title}</p>
+                                        <p className="text-lg text-gray-600">
                                             {experience.etablissement} - {experience.location}
                                         </p>
                                     </div>
                                 </div>
                             </div>
                             {experience.RNCP && (
-                                <div className="mt-5 w-full flex justify-center">
+                                <div className="mt-4 w-full flex justify-center">
                                     <button
-                                        className="p-3 bg-error text-secondary font-bold text-sm text-center mt-10 rounded-full shadow-md shadow-red border-error"
+                                        className="p-3 bg-red-600 text-secondary font-bold text-sm text-center rounded-full shadow-md transition duration-300 bg-error"
                                         onClick={(e) => {
                                             e.preventDefault();
                                             goToRNCP(experience.RNCPCode || "");

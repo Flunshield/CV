@@ -5,7 +5,9 @@ import logoSoprasteria from "./assets/soprasteria_logo.jpeg";
 import logoSteamulo from "./assets/steamulo_lyon_logo.jpeg";
 import logoAfdTech from "./assets/afd_technologies_logo.jpeg";
 import logoSyscom from "./assets/LOGO SYSCOM.png";
-import {bacOnClick, btsOnClick, licenceOnClick, mastereOnClick} from "./helper.tsx";
+import logoEscadrone from "./assets/logo-escadrone.png";
+import awsLogo from "./assets/aws-logo.png";
+import {awsOnClick, bacOnClick, btsOnClick, droneOnClick, licenceOnClick, mastereOnClick} from "./helper.tsx";
 
 export const FORMATION_URL = "/formations";
 export const PROJECTS_URL = "/projects";
@@ -22,7 +24,8 @@ export const MASTERE_URL = "https://www.ecole-isitech.com/formations/mastere-esi
 export const LICENCE_URL = "https://www.ecole-isitech.com/formations/bachelor-rpi/"
 export const BTS_URL = "https://www.campus-avignon.fr/bts-systeme-electronique/"
 export const BAC_URL = "https://www.campus-avignon.fr/baccalaureat-sciences-et-technologies-de-l-industrie-et-du-developpement-durable/"
-
+export const DRONE_URL = "https://escadrone.com/"
+export const AWS_ML_FUNDATION_URL ="https://www.credly.com/badges/a054a1c1-1f92-4d6e-9ce9-22c1d7a2cc61/linked_in_profile"
 // COMPETENCE
 export const TAB_SOFT_SKILS = [
     {
@@ -82,7 +85,17 @@ export const TAB_HARD_SKILS = [
 // FORMATION
 export const FORMATIONS = [
     {
-        id: 1,
+        id: 6,
+        logo: awsLogo,
+        date: "2024",
+        location:"Lyon",
+        title: "AWS Academy Graduate - AWS Academy Machine Learning Foundations",
+        etablissement: "ISITECH",
+        onClick: awsOnClick,
+        RNCP: false
+    },
+    {
+        id: 5,
         logo: logoIsitech,
         date: "2023 - 2025",
         location:"Lyon",
@@ -94,7 +107,7 @@ export const FORMATIONS = [
         RNCPCode: "34471",
     },
     {
-        id: 2,
+        id: 4,
         logo: logoIsitech,
         date: "2022 - 2023",
         location:"Lyon",
@@ -107,6 +120,16 @@ export const FORMATIONS = [
     },
     {
         id: 3,
+        logo:logoEscadrone,
+        date: "2018",
+        location:"Lyon",
+        title: "Formation pilote de drone",
+        etablissement: "Escadrone",
+        onClick: droneOnClick,
+        RNCP: false
+    },
+    {
+        id: 2,
         logo: logoLycee,
         date: "2015 - 2017",
         location:"Avignon",
@@ -116,7 +139,7 @@ export const FORMATIONS = [
         RNCP: false
     },
     {
-        id: 4,
+        id: 1,
         logo: logoLycee,
         date: "2013 - 2015",
         location:"Avignon",
@@ -128,7 +151,6 @@ export const FORMATIONS = [
 ];
 
 // EXPERIENCES
-
 export const EXPERIENCES = [
     {
         id: 1,
@@ -213,7 +235,7 @@ export const PROJETS = [
         description: "Cette APi est le backend de CodeArena",
         technologies: ["NestJs", "Tailwind CSS", "TypeScript", "Dockers", "javascript", "prisma"],
         githubLink: "https://github.com/Flunshield/CodeArena-Backend",
-        demoLink: ""
+        demoLink: "https://codearena.jbertrand.fr/"
     },
     {
         id: 11,
@@ -222,7 +244,7 @@ export const PROJETS = [
         description: "Cette API permet de tester du code (uniquement JavaScript pour le moment).",
         technologies: ["NestJs", "Tailwind CSS", "TypeScript", "Dockers", "javascript"],
         githubLink: "https://github.com/Flunshield/CodeArena-ApiTesting",
-        demoLink: ""
+        demoLink: "https://codearena.jbertrand.fr/"
     },
     {
         id: 10,

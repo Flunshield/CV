@@ -4,7 +4,7 @@ import React from 'react';
 const ConditionsGenerales: React.FC = () => {
     return (
         <Layout>
-        <div className="m-16 p-6 max-w-3xl mx-auto shadow-lg rounded-lg text-white">
+        <div className="m-16 p-6 max-w-3xl mx-auto shadow-lg rounded-lg text-white text-justify">
             <h1 className="text-3xl font-bold mb-6 text-center">Conditions Générales</h1>
             <p className="mb-4">
                 Bienvenue sur jbertrand.fr ! Ces conditions générales décrivent les règles et règlements pour l'utilisation de notre site web.
