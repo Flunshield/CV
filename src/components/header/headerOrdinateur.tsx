@@ -45,7 +45,7 @@ const HeaderOrdinateur: React.FC<HeaderOrdinateurProps> = ({
                                     <Button
                                         type="button"
                                         id="formations"
-                                        className={clsx(btnCss, currentPage === "formations" ? "bg-secondary text-black" : "")}
+                                        className={clsx(btnCss, currentPage === "formations" ? "bg-secondary text-black" : "text-secondary")}
                                         onClick={handleClickFormations}
                                     >
                                         Formations
@@ -56,7 +56,7 @@ const HeaderOrdinateur: React.FC<HeaderOrdinateurProps> = ({
                                         <Button
                                             type="button"
                                             id="experiences"
-                                            className={clsx(btnCss, currentPage === "experiences" ? "bg-secondary text-black" : "")}
+                                            className={clsx(btnCss, currentPage === "experiences" ? "bg-secondary text-black" : "text-secondary")}
                                             onClick={handleClickExperiences}
                                         >
                                             Expériences
@@ -67,7 +67,7 @@ const HeaderOrdinateur: React.FC<HeaderOrdinateurProps> = ({
                                             <Button
                                                 type="button"
                                                 id="competence"
-                                                className={clsx(btnCss, currentPage === "competences" ? "bg-secondary text-black" : "")}
+                                                className={clsx(btnCss, currentPage === "competences" ? "bg-secondary text-black" : "text-secondary")}
                                                 onClick={handleClickCompetence}
                                             >
                                                 Compétences
@@ -78,7 +78,7 @@ const HeaderOrdinateur: React.FC<HeaderOrdinateurProps> = ({
                                                 <Button
                                                     type="button"
                                                     id="projets"
-                                                    className={clsx(btnCss, currentPage === "projects" ? "bg-secondary text-black" : "")}
+                                                    className={clsx(btnCss, currentPage === "projects" ? "bg-secondary text-black" : "text-secondary")}
                                                     onClick={handleClickProjects}
                                                 >
                                                     Projets
@@ -88,7 +88,7 @@ const HeaderOrdinateur: React.FC<HeaderOrdinateurProps> = ({
                                                 <Button
                                                     type="button"
                                                     id="contact"
-                                                    className={clsx(btnCss, currentPage === "contact" ? "bg-secondary text-black" : "")}
+                                                    className={clsx(btnCss, currentPage === "contact" ? "bg-secondary text-black" : "text-secondary")}
                                                     onClick={handleClickContact}
                                                 >
                                                     Contact

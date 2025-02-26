@@ -50,7 +50,7 @@ const NavBar: React.FC<HeaderOrdinateurProps> = ({
         const lastSegment = segments[segments.length - 1];
         setCurrentPage(lastSegment)
     }, [isOpen, mainFooter?.classList]);
-    
+
     return (
         <div className="flex start-0 top-0 absolute w-full">
             <Button
@@ -82,7 +82,7 @@ const NavBar: React.FC<HeaderOrdinateurProps> = ({
                         <Button
                             type="button"
                             id="formations"
-                            className={clsx(btnCss, currentPage === "formations" ? "bg-secondary" : "")}
+                            className={clsx(btnCss, currentPage === "formations" ? "bg-secondary text-black" : "text-secondary")}
                             onClick={handleClickFormations}
                         >
                             Formations
@@ -91,7 +91,7 @@ const NavBar: React.FC<HeaderOrdinateurProps> = ({
                             <Button
                                 type="button"
                                 id="carriere"
-                                className={clsx(btnCss, currentPage === "carriere" ? "bg-secondary" : "")}
+                                className={clsx(btnCss, currentPage === "experiences" ? "bg-secondary text-black" : "text-secondary")}
                                 onClick={handleClickExperiences}
                             >
                                 Expériences
@@ -101,7 +101,7 @@ const NavBar: React.FC<HeaderOrdinateurProps> = ({
                             <Button
                                 type="button"
                                 id="competence"
-                                className={clsx(btnCss, currentPage === "competence" ? "bg-secondary" : "")}
+                                className={clsx(btnCss, currentPage === "competences" ? "bg-secondary text-black" : "text-secondary")}
                                 onClick={handleClickCompetence}
                             >
                                 Compétences
@@ -111,7 +111,7 @@ const NavBar: React.FC<HeaderOrdinateurProps> = ({
                             <Button
                                 type="button"
                                 id="projets"
-                                className={clsx(btnCss, currentPage === "projets" ? "bg-secondary" : "")}
+                                className={clsx(btnCss, currentPage === "projects" ? "bg-secondary text-black" : "text-secondary")}
                                 onClick={handleClickProjects}
                             >
                                 Projets
@@ -121,7 +121,7 @@ const NavBar: React.FC<HeaderOrdinateurProps> = ({
                             <Button
                                 type="button"
                                 id="contact"
-                                className={clsx(btnCss, currentPage === "contact" ? "bg-secondary" : "")}
+                                className={clsx(btnCss, currentPage === "contact" ? "bg-secondary text-black" : "text-secondary")}
                                 onClick={handleClickContact}
                             >
                                 Contact
