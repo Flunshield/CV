@@ -12,29 +12,16 @@ const HomeOrdinateur = () => {
                   <p className="mt-20 mb-10">Bonjour et bienvenue sur mon site !</p>
 
                   <p className="mb-5">Je m'appelle BERTRAND Julien, et je suis développeur !</p>
-                  <p>Je suis passionné par le développement web, en particulier les technologies Frontend telles
-                      que
-                      React et Vue.js.</p>
+                  <p className="mt-10 mb-10">Après 5 ans d’expériences dans les télécommunications (2 ans en tant que
+                      technicien radio et droniste, puis 3 ans en qualité de chef de projet), j’ai décidé d’acquérir
+                      de nouvelles compétences en informatique.</p>
 
-                  <p className="mb-5">À travers ce site, je souhaite partager avec vous mon parcours
-                      professionnel,
-                      mes réalisations et mes compétences. Vous trouverez ici des informations sur mon expérience
-                      professionnelle, mes projets passés, mes formations, ainsi que mes compétences
-                      techniques.</p>
+                  <p className="mb-5">Actuellement en Master Expert en Systèmes d’Information (M2) à ISITECH, je
+                      développe mes compétences en développement (JavaScript, React, TypeScript, Symfony, etc.) et en
+                      gestion de projets IT.</p>
 
-                  <p className="mb-5">Je suis convaincu que vous trouverez en moi le développeur que vous cherchez
-                      !
-                      Avec plus de 5 ans d'expérience dans l'industrie, j'ai travaillé sur une variété de projets,
-                      allant des sites web personnels aux applications d'entreprise complexes.</p>
-
-                  <p className="mb-10">N'hésitez pas à explorer mon site pour en apprendre davantage sur mon
-                      parcours
-                      et mes réalisations.
-                      Si vous avez des questions ou si vous souhaitez discuter d'une collaboration potentielle,
-                      n'hésitez
-                      pas à me contacter via le formulaire de contact. Je suis ouvert aux opportunités de
-                      freelance et
-                      de collaboration.</p>
+                  <p className="mb-5">Mon objectif est de combiner mes compétences techniques et managériales pour
+                      contribuer efficacement à des projets innovants dans le secteur du numérique.</p>
 
                   <p className="mb-10">Merci de votre visite !</p>
               </div>

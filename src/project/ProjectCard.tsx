@@ -1,7 +1,6 @@
 import React from 'react';
 import { Project } from "../interface.ts";
 import clsx from "clsx";
-import useIpStatus from "../hookCustom/useIpStatus.tsx";
 
 interface ProjectCardProps {
     project: Project;
@@ -10,7 +9,6 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, className }) => {
     const { title, commentaire, description, technologies, githubLink, demoLink } = project;
-    const serveurStatus = useIpStatus()
 
     return (
         <div className={clsx("bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out p-6 flex flex-col justify-between", className)} style={{ minHeight: '450px' }}>
@@ -38,11 +36,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, className }) => {
                             GitHub
                         </a>
                     )}
-                    {demoLink && serveurStatus &&  (
+                    {demoLink &&
                         <a href={demoLink} target="_blank" rel="noopener noreferrer" className={"text-white bg-green-500 hover:bg-green-600 px-4 py-2 rounded-md transition-colors duration-200"}>
                             Voir la démo
                         </a>
-                    )}
+                    }
                 </div>
             </div>
         </div>

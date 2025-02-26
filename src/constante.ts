@@ -55,7 +55,7 @@ export const TAB_SOFT_SKILS = [
 ]
 export const TAB_HARD_SKILS_PROG = ["Javascript", "Node", "Php", "Html", "Css", "C#", "Python", "Java"];
 export const TAB_HARD_SKILS_FRAMEWORK = ["React", "Tailwind", "Symfony", "Strapi", "NestJs", "Express", "Bootstrap", "Laravel"];
-export const TAB_HARD_SKILS_BDD = ["PostgreSQL", "MySQL", "MongoDB", "SQLite"];
+export const TAB_HARD_SKILS_BDD = ["PostgreSQL", "MySQL", "MongoDb", "SQLite"];
 export const TAB_HARD_SKILS_DEVOPS = ["Git", "Docker", "Jenkins", "Kubernetes", "AWS", "Azure", "Google Cloud"];
 export const TAB_HARD_SKILS_TEST = ["Jest", "Mocha", "Chai", "Selenium", "Cypress"];
 
@@ -158,9 +158,10 @@ export const EXPERIENCES = [
         title: "Alternance - Développeur Application Windows/Android/IOS",
         date: "Octobre 2023 - Octobre 2025",
         location: "SopraSteria - Limonest",
+        siteWeb: "https://www.soprasteria.com/",
         description:
-            "Je travaille sur le développement et la maintenance d'applications en lien avec le secteur immobilier.",
-        technologies: ["React native", "TypeScript", "Javascript Vanilla", "Cordova", "SQlite", "Git", "GitLab"]
+            "Dans mon rôle actuel de Développeur d'Applications Multi-OS, je me consacre à la création, à l'optimisation et au déploiement automatique d'applications multiplateformes en utilisant Cordova, JavaScript, Fastlane, Appium et Jenkins. Ma responsabilité principale est de garantir que nos applications offrent une expérience utilisateur fluide sur plusieurs systèmes d'exploitation, y compris iOS, Android et Windows.",
+        technologies: ["React native", "TypeScript", "Javascript Vanilla", "Cordova", "SQlite", "Git", "GitLab", "Fastlane", "Appium", "Jenkins"],
     },
     {
         id: 2,
@@ -168,8 +169,9 @@ export const EXPERIENCES = [
         title: "Alternance - Développeur Web Full Stack",
         date: "Septembre 2022 - Septembre 2023",
         location: "Steamulo-Lyon - Lyon",
+        siteWeb: "https://www.steamulo.com/",
         description:
-            "J'ai travaillé sur le développement du guichet unique des entreprises et des associations. L'objectif principal de ce projet était de simplifier et de rendre plus efficaces les procédures administratives liées à la création, la modification et la cessation d'entreprise ou d'association.",
+            "Au cours de mon alternance en tant que développeur full stack, j'ai eu l'opportunité de contribuer de manière significative à un projet majeur dont l'objectif principal était de simplifier et de rendre plus efficaces les procédures administratives relatives à la création, la modification, et la cessation d'entreprises ou d'associations. Grâce à l'utilisation de technologies modernes telles que React et TypeScript pour le front-end, ainsi que Symfony pour le back-end, j'ai pu participer activement à la conception et à la mise en place d'une solution robuste et performante. Ce projet m'a permis de développer mes compétences techniques tout en m'impliquant dans la résolution de problématiques concrètes, impactant directement la vie des utilisateurs finaux.",
         technologies: ["React", "TypeScript", "Strapi", "Symfony PHP", "Docker", "PostgreSQL", "Git", "GitLab"],
     },
     {
@@ -178,6 +180,7 @@ export const EXPERIENCES = [
         title: "CDI - Chef de projet FTTO / Référent technique FTTO",
         date: "Mai 2019 - Août 2022",
         location: "AFDTech - Lyon",
+        siteWeb: "https://afd.tech/",
         description:
             "Mise en place d’un pôle production, management transverse d’une équipe de 12 personnes, prise en charge des nouvelles recrues et assurer leur montée en compétence, déploiement réalisé selon les objectifs fixés (Délai / Coût), gestion des contrats des prestataires, obtention des livrables dans les délais et au juste prix, validation technico-financière des livrables, devis et conceptions techniques, etc.",
         tasks: [
@@ -200,6 +203,7 @@ export const EXPERIENCES = [
         title: "CDI - Technicien Radio / Télépilote de drone",
         date: "Septembre 2017 - Avril 2019",
         location: "AFDTech - Lyon",
+        siteWeb: "https://www.syscom.fr/",
         description:
             "Réalisation de faisabilité hertziennes (survey), réalisation de panoramiques, simulation radio 3G/4G/5G, conception d'architecture site radio, maintenance mesure PIM, calibrage RET.",
         tasks: [
@@ -224,7 +228,7 @@ export const PROJETS = [
             "Ces derniers obtiendront un classement permettant donc de différencier leur niveau de compétences. Ce qui\n" +
             "pourra également permettre à des recruteurs potentiels de pouvoir filtrer leurs recherches et de démarcher les\n" +
             "développeurs qu'ils estiment posséder la compétence qu'ils recherchent.",
-        technologies: ["React", "Tailwind CSS", "TypeScript", "Dockers", "javascript"],
+        technologies: ["React", "Tailwind CSS", "TypeScript", "Dockers", "javascript", "Vite", "Html", "Css"],
         githubLink: "https://github.com/Flunshield/CodeArena-Frontend",
         demoLink: "https://codearena.jbertrand.fr/"
     },
@@ -233,7 +237,7 @@ export const PROJETS = [
         title: "CodeArena-Backend",
         commentaire: "Projet CodeArena API / Développé dans le cadre de mon projet de première année en Mastère ESI.",
         description: "Cette APi est le backend de CodeArena",
-        technologies: ["NestJs", "Tailwind CSS", "TypeScript", "Dockers", "javascript", "prisma"],
+        technologies: ["NestJs", "Tailwind CSS", "TypeScript", "Docker", "javascript", "Prisma", "MariaDb"],
         githubLink: "https://github.com/Flunshield/CodeArena-Backend",
         demoLink: "https://codearena.jbertrand.fr/"
     },
@@ -260,7 +264,7 @@ export const PROJETS = [
         title: "front-app-ElasticSearch",
         commentaire: "",
         description: "Ce projet est une application web créée avec React, TypeScript et Tailwind CSS dan l'objectif de s'entrainer à utiliser ElastikSearch.",
-        technologies: ["React", "Tailwind CSS", "TypeScript", "ElasticSearch"],
+        technologies: ["React", "Tailwind CSS", "TypeScript", "ElasticSearch", "Html", "Css"],
         githubLink: "https://github.com/Flunshield/frontElasticSearch",
         demoLink: ""
 
@@ -271,7 +275,7 @@ export const PROJETS = [
         commentaire: "Projet réalisé dans le cadre de ma licence chez l'ISITECH (2022-2023)",
         description: "\n" +
             "QR Coffee est une application qui permet de générer des codes QR pour différentes utilisations, notamment pour des URL, des cartes de visite électroniques (vCard) ou des positions géographiques. Son fonctionnement est simple : l'utilisateur fournit les informations nécessaires, telles qu'une URL, des coordonnées GPS ou des données de contact, et l'application génère un code QR correspondant.",
-        technologies: ["React", "Tailwind CSS", "Node.js", "Clerk", "mongoDb"],
+        technologies: ["React", "Tailwind CSS", "Node.js", "Clerk", "MongoDb", "Docker", "Html", "Css"],
         githubLink: "https://github.com/Flunshield/QRCoffee",
         demoLink: "https://frontqrcoffee.jbertrand.fr/"
     },
@@ -280,7 +284,7 @@ export const PROJETS = [
         title: "Starter React-Typescript-Tailwind-Vite",
         commentaire: "",
         description: "Un bon point de départ pour débuter un projet en utilisant React avec TypeScript et TailwindCSS est de rassembler ces technologies puissantes. Avec React, vous bénéficiez d'une bibliothèque JavaScript flexible pour la construction d'interfaces utilisateur dynamiques. TypeScript offre un typage statique pour une meilleure sécurité et une maintenance plus facile du code.",
-        technologies: ["React", "Tailwind CSS", "NestJs", "Vite"],
+        technologies: ["React", "Tailwind CSS", "NestJs", "Vite","Html", "Css"],
         githubLink: "https://github.com/Flunshield/Starter-React-ts-tailwind-vite",
         demoLink: ""
     },
@@ -341,21 +345,22 @@ export const PROJETS = [
 ];
 
 export const TECHNOLOGIES = [
+    "Android",
+    "Css",
+    "Docker",
+    "Html",
+    "Java",
+    "MariaDb",
+    "MongoDb",
+    "MySQL",
+    "Php",
+    "Prisma",
+    "Python",
     "React",
     "Tailwind CSS",
-    "NestJs",
-    "Vite",
-    "MariaDb",
-    "Prisma",
-    "Docker",
-    "Python",
-    "Word",
-    "Android",
-    "Java",
-    "Html",
-    "Css",
-    "php",
-    "MySQL",
     "TypeScript",
-    "Tous"
+    "Vite",
+    "Word",
+    "NestJs"
 ];
+

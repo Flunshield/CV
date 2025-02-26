@@ -7,3 +7,13 @@ export interface Project {
     githubLink: string;
     demoLink: string;
 }
+
+export interface ExperienceInterface {
+    id: number;
+    title: string;
+    date: string;
+    location: string;
+    description: string;
+    logo?: string;
+    siteWeb?: string;
+}
