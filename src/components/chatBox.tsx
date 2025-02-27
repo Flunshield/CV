@@ -37,6 +37,13 @@ const ChatBox: React.FC = () => {
         setMessages((prev) => [...prev, botMessage]);
     };
 
+    const handleKeyPress = (e: React.KeyboardEvent) => {
+        if (e.key === 'Enter') {
+            e.preventDefault(); // Empêche le comportement par défaut (si c'est un formulaire, il ne se soumettra pas)
+            handleSend(); // Appelle la fonction de gestion
+        }
+    };
+
     const fetchGeminiResponse = async (question: string): Promise<string> => {
         try {
 
@@ -82,7 +89,7 @@ const ChatBox: React.FC = () => {
         <div className={clsx(isMobile ? "hidden" : "block", "fixed bottom-5 right-5 w-80 rounded-lg z-[9999]")}>
             <div className={clsx("flex flex-col bg-white rounded-2xl p-4 mb-20 border-2 border-black shadow-lg", isOpen ? "block" : "hidden")}>
                 <h2 className="text-center font-bold mb-5">ChatBox</h2>
-                <div ref={chatContainerRef} className="overflow-y-auto max-h-60 space-y-2">
+                <div ref={chatContainerRef} className="overflow-y-auto max-h-60 space-y-2 mb-5">
                     {messages.map((msg, index) => (
                         <div key={index}
                              className={clsx("p-2 rounded-lg", msg.sender === "user" ? "bg-blue-500 text-white" : "bg-gray-300")}>
@@ -98,7 +105,8 @@ const ChatBox: React.FC = () => {
                 <div className="flex rounded-2xl">
                     <input type="text" value={input} onChange={(e) => setInput(e.target.value)}
                            className="flex-1 p-2 border rounded-l-lg focus:outline-none"
-                           placeholder="Envoyer un message..."/>
+                           placeholder="Envoyer un message..."
+                           onKeyDown={handleKeyPress}/>
                     <button onClick={handleSend}
                             className="p-2 bg-blue-500 text-white rounded-r-lg hover:bg-blue-600">Envoyer
                     </button>
