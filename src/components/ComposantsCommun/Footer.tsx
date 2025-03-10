@@ -55,7 +55,7 @@ const Footer: React.FC<FooterProps> = () => {
             <div className="flex flex-row text-center justify-arround text-sm m-5">
                 <p className="flex-2">© {year} BERTRAND Julien. Tous droits réservés.</p>
                 <a href={CONDITION_GENERALES_URL} className="hover:underline flex-1">Conditions Générales</a>
-                <p className="flex-2">Version 1</p>
+                <p className="flex-2">Version 1.1</p>
             </div>
         </footer>
     );

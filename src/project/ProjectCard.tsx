@@ -1,6 +1,8 @@
 import React from 'react';
 import { Project } from "../interface.ts";
 import clsx from "clsx";
+import { motion } from "framer-motion";  // Importation de framer-motion
+import { isMobile } from "react-device-detect";
 
 interface ProjectCardProps {
     project: Project;
@@ -11,7 +13,25 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, className }) => {
     const { title, commentaire, description, technologies, githubLink, demoLink } = project;
 
     return (
-        <div className={clsx("bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out p-6 flex flex-col justify-between", className)} style={{ minHeight: '450px' }}>
+        <motion.div
+            className={clsx(isMobile ? "" : "h-[700px]",  "bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out p-6 flex flex-col justify-between", className)}
+            initial={{
+                opacity: 0,
+                scale: 0.8,
+                x: -20,
+                y: -20
+            }} // Départ de l'élément
+            animate={{
+                opacity: 1,
+                scale: 1,
+                x: 0,
+                y: 0
+            }} // Fin de l'animation
+            transition={{
+                duration: 0.6,
+                ease: "easeOut",
+            }}
+        >
             <div>
                 {title && <h2 className={clsx(commentaire ? "" : "mb-8", "text-3xl font-bold text-gray-900 text-center")}>{title}</h2>}
                 {commentaire && <h3 className="mb-4 text-lg text-center text-gray-700 italic">{commentaire}</h3>}
@@ -43,7 +63,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, className }) => {
                     }
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 }
 

@@ -1,0 +1,25 @@
+name: FTP Connection
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ftp_connection:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install FTP client
+        run: sudo apt-get install -y ftp
+
+      - name: Connect to FTP and list files
+        run: |
+          ftp -n -v jbertrand.fr <<END_SCRIPT
+          quote USER hc1opp_juju84350
+          quote PASS ${{ secrets.FTP_PASSWORD }}
+          ls
+          bye
+          END_SCRIPT

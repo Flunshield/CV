@@ -52,7 +52,7 @@ const NavBar: React.FC<HeaderOrdinateurProps> = ({
     }, [isOpen, mainFooter?.classList]);
 
     return (
-        <div className="flex start-0 top-0 absolute w-full">
+        <div className="flex start-0 top-0 absolute w-full bg-gray-800">
             <Button
                 type="button"
                 id="navBarButton"

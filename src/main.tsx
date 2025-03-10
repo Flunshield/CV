@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
 import Home from "./page/Home.tsx";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import NotFoundPage from "./page/NotFoundPage.tsx";

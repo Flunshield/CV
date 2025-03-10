@@ -114,7 +114,7 @@ const ChatBox: React.FC = () => {
             </div>
 
             <button onClick={() => setIsOpen((prev) => !prev)}
-                    className="z-50 fixed bottom-5 right-5 p-3 bg-gray-50 text-white rounded-full hover:bg-gray-200 flex items-center justify-center">
+                    className="z-50 fixed bottom-5 right-5 p-3 bg-gray-50 text-white rounded-full hover:bg-gray-800 shadow-md shadow-gray-400 flex items-center justify-center">
                 <div className="flex">
                     {isOpen ? (
                         <p className="text-black font-bold">{isOpen ? "Fermer" : "Ouvrir"}</p>

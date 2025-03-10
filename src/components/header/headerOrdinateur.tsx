@@ -37,15 +37,15 @@ const HeaderOrdinateur: React.FC<HeaderOrdinateurProps> = ({
                         handleClickContact={handleClickContact}
                         btnCss={btnCss}/>
                     :
-                    <div className="flex start-0 top-0 absolute w-full">
+                    <div className="flex start-0 top-0 absolute w-full bg-gray-800 text-gray-100">
                         <div className="flex justify-between w-full">
-                            <a className="text-secondary text-2xl m-3 font-bold ml-10" href="/">BERTRAND Julien</a>
+                            <a className="text-2xl m-3 font-bold ml-10" href="/">BERTRAND Julien</a>
                             <div className="flex flex-col sm:flex-row">
                                 <div className="flex items-baseline">
                                     <Button
                                         type="button"
                                         id="formations"
-                                        className={clsx(btnCss, currentPage === "formations" ? "bg-secondary text-black" : "text-secondary")}
+                                        className={clsx(btnCss, currentPage === "formations" ? "bg-gris text-secondary" : "")}
                                         onClick={handleClickFormations}
                                     >
                                         Formations
@@ -56,7 +56,7 @@ const HeaderOrdinateur: React.FC<HeaderOrdinateurProps> = ({
                                         <Button
                                             type="button"
                                             id="experiences"
-                                            className={clsx(btnCss, currentPage === "experiences" ? "bg-secondary text-black" : "text-secondary")}
+                                            className={clsx(btnCss, currentPage === "experiences" ? "bg-gris text-secondary" : "")}
                                             onClick={handleClickExperiences}
                                         >
                                             Expériences
@@ -67,7 +67,7 @@ const HeaderOrdinateur: React.FC<HeaderOrdinateurProps> = ({
                                             <Button
                                                 type="button"
                                                 id="competence"
-                                                className={clsx(btnCss, currentPage === "competences" ? "bg-secondary text-black" : "text-secondary")}
+                                                className={clsx(btnCss, currentPage === "competences" ? "bg-gris text-secondary" : "")}
                                                 onClick={handleClickCompetence}
                                             >
                                                 Compétences
@@ -78,7 +78,7 @@ const HeaderOrdinateur: React.FC<HeaderOrdinateurProps> = ({
                                                 <Button
                                                     type="button"
                                                     id="projets"
-                                                    className={clsx(btnCss, currentPage === "projects" ? "bg-secondary text-black" : "text-secondary")}
+                                                    className={clsx(btnCss, currentPage === "projects" ? "bg-gris text-secondary" : "")}
                                                     onClick={handleClickProjects}
                                                 >
                                                     Projets
@@ -88,7 +88,7 @@ const HeaderOrdinateur: React.FC<HeaderOrdinateurProps> = ({
                                                 <Button
                                                     type="button"
                                                     id="contact"
-                                                    className={clsx(btnCss, currentPage === "contact" ? "bg-secondary text-black" : "text-secondary")}
+                                                    className={clsx(btnCss, currentPage === "contact" ? "bg-gris text-secondary" : "")}
                                                     onClick={handleClickContact}
                                                 >
                                                     Contact

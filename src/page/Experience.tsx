@@ -1,10 +1,10 @@
 import Layout from "components/ComposantsCommun/Layout.tsx";
-import {isMobile} from "react-device-detect";
+import { isMobile } from "react-device-detect";
 import clsx from "clsx";
-import {EXPERIENCES} from "../constante.ts";
-import {ExperienceInterface} from "../interface.ts";
-import {useState} from "react";
-
+import { EXPERIENCES } from "../constante.ts";
+import { ExperienceInterface } from "../interface.ts";
+import { useState } from "react";
+import { motion } from "framer-motion"; // Importation de framer-motion
 
 const Experience = () => {
     const [selectedExperience, setSelectedExperience] = useState<ExperienceInterface | null>(null);
@@ -24,11 +24,18 @@ const Experience = () => {
                     Expériences Professionnelles
                 </h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {EXPERIENCES.map((experience) => (
-                        <div
+                    {EXPERIENCES.map((experience, index) => (
+                        <motion.div
                             key={experience.id}
                             className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl cursor-pointer transition duration-300"
                             onClick={() => openPopup(experience)}
+                            initial={{ opacity: 0, y: 30 }} // Animation initiale avec une légère translation
+                            animate={{ opacity: 1, y: 0 }}  // Apparition douce sans trop de mouvement
+                            transition={{
+                                delay: index * 0.2,  // Retard progressif pour chaque carte
+                                duration: 0.6,       // Durée plus longue pour une transition plus fluide
+                                ease: "easeInOut",   // Transition fluide avec une courbe d'accélération/décélération
+                            }}
                         >
                             <div className="flex justify-center mb-4">
                                 {experience.logo && (
@@ -43,7 +50,7 @@ const Experience = () => {
                                 {experience.title}
                             </h2>
                             <p className="text-md text-gray-500 text-center">{experience.date}</p>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
 
