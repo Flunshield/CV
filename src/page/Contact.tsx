@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from "components/ComposantsCommun/Layout.tsx";
 import { FaEnvelope, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
-import { goToEmail, goToMap, goToPhone } from "../project/helper.ts";
+import { goToEmail, goToMap } from "../project/helper.ts";
 import { motion } from 'framer-motion'; // Importation de framer-motion
 
 const Contact: React.FC = () => {
