@@ -6,8 +6,29 @@ on:
       - main
 
 jobs:
-  ftp_connection:
+  # Job Build : Construire le projet
+  build:
     runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Installer Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # Choisir la version de Node.js que vous voulez (ici version 16)
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the project
+        run: npm run build
+
+  # Job Delete : Supprimer les fichiers existants sur le serveur FTP
+  delete:
+    runs-on: ubuntu-latest
+    needs: build  # Le job 'delete' dépend du job 'build'
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -15,11 +36,6 @@ jobs:
       - name: Install FTP client
         run: sudo apt-get install -y ftp
 
-      # Stage Build : Construire le projet
-      - name: Build the project
-        run: npm run build
-
-      # Stage Delete : Supprimer les fichiers existants sur le serveur FTP
       - name: Delete existing files from FTP server
         run: |
           ftp -n -v jbertrand.fr <<END_SCRIPT
@@ -32,7 +48,17 @@ jobs:
           bye
           END_SCRIPT
 
-      # Stage Copy : Téléverser les nouveaux fichiers sur le serveur FTP
+  # Job Copy : Téléverser les nouveaux fichiers sur le serveur FTP
+  copy:
+    runs-on: ubuntu-latest
+    needs: delete  # Le job 'copy' dépend du job 'delete'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install FTP client
+        run: sudo apt-get install -y ftp
+
       - name: Upload new files to FTP server
         run: |
           ftp -n -v jbertrand.fr <<END_SCRIPT
