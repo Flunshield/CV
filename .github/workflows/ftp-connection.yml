@@ -15,11 +15,32 @@ jobs:
       - name: Install FTP client
         run: sudo apt-get install -y ftp
 
-      - name: Connect to FTP and list files
+      # Stage Build : Construire le projet
+      - name: Build the project
+        run: npm run build
+
+      # Stage Delete : Supprimer les fichiers existants sur le serveur FTP
+      - name: Delete existing files from FTP server
         run: |
           ftp -n -v jbertrand.fr <<END_SCRIPT
           quote USER hc1opp_juju84350
           quote PASS ${{ secrets.FTP_PASSWORD }}
-          ls
+          # Suppression du fichier index.html
+          delete index.html
+          # Suppression du dossier assets
+          delete assets
+          bye
+          END_SCRIPT
+
+      # Stage Copy : Téléverser les nouveaux fichiers sur le serveur FTP
+      - name: Upload new files to FTP server
+        run: |
+          ftp -n -v jbertrand.fr <<END_SCRIPT
+          quote USER hc1opp_juju84350
+          quote PASS ${{ secrets.FTP_PASSWORD }}
+          # Téléchargement du fichier index.html
+          put ./dist/index.html index.html
+          # Téléchargement des fichiers du dossier assets
+          mput ./dist/assets/*
           bye
           END_SCRIPT
