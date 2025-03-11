@@ -66,6 +66,7 @@ jobs:
         run: |
           cd ..
           pwd
+          cd /dist
           ls
 
       # Téléverser le fichier index.html à la racine du serveur FTP
