@@ -83,15 +83,6 @@ jobs:
             fi
           done
 
-      - name: Vérifier si le dossier dist existe
-        run: |
-          if [ -d "./dist" ]; then
-            echo "Le dossier dist existe."
-          else
-            echo "Le dossier dist n'existe pas."
-            exit 1
-          fi
-
       # Téléverser le fichier index.html à la racine du serveur FTP
       - name: Upload index.html to the root directory of FTP server
         run: |
@@ -100,7 +91,7 @@ jobs:
           quote PASS ${{ secrets.FTP_PASSWORD }}
           # Vérifier que le fichier existe avant de le télécharger
           cd ..
-          put ./dist/index.html index.html
+          put index.html
           bye
           END_SCRIPT
 
@@ -114,6 +105,6 @@ jobs:
           cd ..
           mkdir assets
           cd assets
-          mput ./dist/assets/*
+          mput ./assets/*
           bye
           END_SCRIPT
