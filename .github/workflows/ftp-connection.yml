@@ -63,7 +63,7 @@ jobs:
 
       # Afficher le contenu du répertoire dist pour vérifier les fichiers présents
       - name: List dist contents
-        run: ls -R ./dist
+        run: pwd
 
       # Téléverser le fichier index.html à la racine du serveur FTP
       - name: Upload index.html to the root directory of FTP server
