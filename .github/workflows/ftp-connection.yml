@@ -17,13 +17,18 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'  # Choisir la version de Node.js que vous voulez (ici version 16)
+          node-version: '18'  # Choisir la version de Node.js que vous voulez (ici version 18)
 
       - name: Install dependencies
         run: npm install
 
       - name: Build the project
         run: npm run build
+
+      # Vérifier que le dossier dist/assets existe après le build
+      - name: List the contents of dist
+        run: |
+          ls -R ./dist
 
   # Job Delete : Supprimer les fichiers existants sur le serveur FTP
   delete:
@@ -70,8 +75,5 @@ jobs:
           cd assets  # Navigate to the assets directory on the FTP server
           lcd ./dist/assets  # Change local directory to dist/assets
           mput $(cat filelist.txt)  # Upload files listed in filelist.txt
-          bye
-          END_SCRIPT
-          EOF
           bye
           END_SCRIPT
