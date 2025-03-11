@@ -94,13 +94,10 @@ jobs:
           bye
           END_SCRIPT
 
+      - name: Install lftp
+        run: sudo apt-get install -y lftp
+
       # Téléverser les fichiers du dossier assets sur le serveur FTP
       - name: Upload assets folder to the assets directory of FTP server
         run: |
-          ftp -n -v jbertrand.fr <<END_SCRIPT
-          quote USER hc1opp_juju84350
-          quote PASS ${{ secrets.FTP_PASSWORD }}
-          # Créer le dossier assets si nécessaire et télécharger les fichiers
-          mput assets/* -i
-          bye
-          END_SCRIPT
+          lftp -u hc1opp_juju84350,${{ secrets.FTP_PASSWORD }} -e "mirror -R assets /assets; bye" jbertrand.fr
