@@ -16,11 +16,18 @@ jobs:
         with:
           node-version: '18'  # Choisir la version de Node.js que vous voulez (ici version 18)
 
+      - name: List files in the current directory (for debugging)
+        run: ls -la /home/runner/work/CV
+
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd /home/runner/work/CV  # Aller dans le bon répertoire
+          npm install
 
       - name: Build the project
-        run: npm run build
+        run: |
+          cd /home/runner/work/CV  # Aller dans le bon répertoire
+          npm run build
 
       - name: Upload dist folder
         uses: actions/upload-artifact@v4
