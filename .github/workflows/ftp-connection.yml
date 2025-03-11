@@ -55,27 +55,35 @@ jobs:
     runs-on: ubuntu-latest
     needs: delete
     steps:
+      # Télécharger l'artefact dist
       - name: Download dist folder
         uses: actions/download-artifact@v4
         with:
-          name: dist
+          name: dist  # Assurez-vous que le nom de l'artefact correspond
 
+      # Afficher le contenu du répertoire dist pour vérifier les fichiers présents
+      - name: List dist contents
+        run: ls -R ./dist
+
+      # Téléverser le fichier index.html à la racine du serveur FTP
       - name: Upload index.html to the root directory of FTP server
         run: |
           ftp -n -v jbertrand.fr <<END_SCRIPT
           quote USER hc1opp_juju84350
           quote PASS ${{ secrets.FTP_PASSWORD }}
-          # Téléchargement du fichier index.html à la racine du serveur FTP
+          # Vérifier que le fichier existe avant de le télécharger
           put ./dist/index.html index.html
           bye
           END_SCRIPT
-  
+
+      # Téléverser les fichiers du dossier assets sur le serveur FTP
       - name: Upload assets folder to the assets directory of FTP server
         run: |
           ftp -n -v jbertrand.fr <<END_SCRIPT
           quote USER hc1opp_juju84350
           quote PASS ${{ secrets.FTP_PASSWORD }}
-          # Téléchargement des fichiers du dossier assets dans le dossier assets sur le serveur FTP
+          # Créer le dossier assets si nécessaire et télécharger les fichiers
+          mkdir assets
           cd assets
           mput ./dist/assets/*
           bye
