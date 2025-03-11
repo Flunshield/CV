@@ -63,7 +63,10 @@ jobs:
 
       # Afficher le contenu du répertoire dist pour vérifier les fichiers présents
       - name: List dist contents
-        run: pwd
+        run: |
+          cd ..
+          pwd
+          ls
 
       # Téléverser le fichier index.html à la racine du serveur FTP
       - name: Upload index.html to the root directory of FTP server
@@ -72,6 +75,7 @@ jobs:
           quote USER hc1opp_juju84350
           quote PASS ${{ secrets.FTP_PASSWORD }}
           # Vérifier que le fichier existe avant de le télécharger
+          cd ..
           put ./dist/index.html index.html
           bye
           END_SCRIPT
@@ -83,6 +87,7 @@ jobs:
           quote USER hc1opp_juju84350
           quote PASS ${{ secrets.FTP_PASSWORD }}
           # Créer le dossier assets si nécessaire et télécharger les fichiers
+          cd ..
           mkdir assets
           cd assets
           mput ./dist/assets/*
