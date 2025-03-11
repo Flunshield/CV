@@ -1,10 +1,11 @@
 import React from 'react';
 import Layout from "components/ComposantsCommun/Layout.tsx";
 import { FaEnvelope, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
-import { goToEmail, goToMap } from "../project/helper.ts";
+import { goToEmail, goToMap, goToPhone } from "../project/helper.ts";
 import { motion } from 'framer-motion'; // Importation de framer-motion
 
 const Contact: React.FC = () => {
+
     return (
         <Layout>
             <div className="flex flex-col items-center justify-center h-screen px-4">
@@ -40,7 +41,7 @@ const Contact: React.FC = () => {
                                 whileHover={{ scale: 1.1 }}
                             >
                                 <FaEnvelope className="text-xl mr-2" />
-                                <p><span className="font-bold">Email:</span> j.bertrand.sin@gmail.com</p>
+                                <p onClick={goToEmail}><span className="font-bold">Email:</span> j.bertrand.sin@gmail.com</p>
                             </motion.div>
                             <motion.div
                                 className="flex items-center cursor-pointer hover:underline"
@@ -50,7 +51,7 @@ const Contact: React.FC = () => {
                                 whileHover={{ scale: 1.1 }}
                             >
                                 <FaPhone className="text-xl mr-2" />
-                                <p><span className="font-bold">Téléphone:</span> +33 6 51 23 03 75</p>
+                                <p onClick={goToPhone}><span className="font-bold">Téléphone:</span> +33 6 51 23 03 75</p>
                             </motion.div>
                             <motion.div
                                 className="flex items-center"

@@ -29,5 +29,17 @@ export default defineConfig((configEnv) => {
           : "[hash:base64:5]",
       },
     },
+    build: {
+      chunkSizeWarningLimit: 1000, // Augmente la limite d'avertissement
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            if (id.includes("node_modules")) {
+              return "vendor"; // Sépare les dépendances tierces
+            }
+          },
+        },
+      },
+    },
   };
 });

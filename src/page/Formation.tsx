@@ -29,7 +29,7 @@ const Formation = () => {
     return (
         <Layout>
             <div className={clsx(isMobile ? "mt-20 mb-20" : "mt-40 mb-20", "flex flex-col items-center")}>
-                <h1 className="text-6xl mb-12 font-extrabold text-secondary">Mes Formations</h1>
+                <h1 className="text-4xl mb-12 font-bold text-center text-secondary">Mes formations</h1>
                 <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-5">
                     {FORMATIONS.map((experience: FormationProps, index: number) => (
                         <motion.li
@@ -63,7 +63,7 @@ const Formation = () => {
                             {experience.RNCP && (
                                 <div className="mt-4 w-full flex justify-center">
                                     <button
-                                        className="p-3 bg-red-600 text-secondary font-bold text-sm text-center rounded-full shadow-md transition duration-300 bg-error"
+                                        className="p-3 bg-red-600 text-gris font-bold text-sm text-center rounded-full shadow-md transition duration-300 bg-error"
                                         onClick={(e) => {
                                             e.preventDefault();
                                             goToRNCP(experience.RNCPCode || "");

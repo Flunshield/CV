@@ -20,8 +20,8 @@ const Experience = () => {
     return (
         <Layout>
             <div className={clsx(isMobile ? "p-4" : "mt-40", "w-full lg:w-2/3 mx-auto mb-12 relative")}>
-                <h1 className="text-4xl font-extrabold text-secondary text-center mb-8">
-                    Expériences Professionnelles
+                <h1 className="text-4xl font-bold text-secondary text-center mb-8">
+                    Mes expériences professionnelles
                 </h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {EXPERIENCES.map((experience, index) => (

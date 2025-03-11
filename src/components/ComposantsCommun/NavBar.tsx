@@ -61,13 +61,13 @@ const NavBar: React.FC<HeaderOrdinateurProps> = ({
             >
                 <img src={iconeMenu} alt="icone menu" className={clsx(isOpen ? "hidden" : "w-10 mt-2")}/>
             </Button>
-            <h1 className={clsx(isOpen ? "hidden" : "ml-10", "text-secondary text-2xl m-3 font-bold")}>BERTRAND Julien</h1>
+            <h1 className={clsx(isOpen ? "hidden" : "ml-10", "text-gris text-2xl m-3 font-bold")}>BERTRAND Julien</h1>
             {isOpen && (
                 <Card
                     className="w-2/3 md:w-1/3 border-0 border-r border-b h-screen rounded-tr-2xl rounded-br-2xl rounded-tl-none rounded-bl-none top-0 bg-primary border-white">
                     <nav className="block flex-col text-secondary text-2xl font-bold">
                         <div className="flex flex-row items-baseline justify-between">
-                            <h1 className="text-secondary text-2xl m-3 font-bold">
+                            <h1 className="text-gris text-center text-2xl m-3 font-bold">
                                 BERTRAND Julien
                             </h1>
                             <Button
@@ -82,7 +82,7 @@ const NavBar: React.FC<HeaderOrdinateurProps> = ({
                         <Button
                             type="button"
                             id="formations"
-                            className={clsx(btnCss, currentPage === "formations" ? "bg-secondary text-black" : "text-secondary")}
+                            className={clsx(btnCss, currentPage === "formations" ? "bg-gris " : "text-gris")}
                             onClick={handleClickFormations}
                         >
                             Formations
@@ -91,7 +91,7 @@ const NavBar: React.FC<HeaderOrdinateurProps> = ({
                             <Button
                                 type="button"
                                 id="carriere"
-                                className={clsx(btnCss, currentPage === "experiences" ? "bg-secondary text-black" : "text-secondary")}
+                                className={clsx(btnCss, currentPage === "experiences" ? "bg-gris " : "text-gris")}
                                 onClick={handleClickExperiences}
                             >
                                 Expériences
@@ -101,7 +101,7 @@ const NavBar: React.FC<HeaderOrdinateurProps> = ({
                             <Button
                                 type="button"
                                 id="competence"
-                                className={clsx(btnCss, currentPage === "competences" ? "bg-secondary text-black" : "text-secondary")}
+                                className={clsx(btnCss, currentPage === "competences" ? "bg-gris " : "text-gris")}
                                 onClick={handleClickCompetence}
                             >
                                 Compétences
@@ -111,7 +111,7 @@ const NavBar: React.FC<HeaderOrdinateurProps> = ({
                             <Button
                                 type="button"
                                 id="projets"
-                                className={clsx(btnCss, currentPage === "projects" ? "bg-secondary text-black" : "text-secondary")}
+                                className={clsx(btnCss, currentPage === "projects" ? "bg-gris " : "text-gris")}
                                 onClick={handleClickProjects}
                             >
                                 Projets
@@ -121,7 +121,7 @@ const NavBar: React.FC<HeaderOrdinateurProps> = ({
                             <Button
                                 type="button"
                                 id="contact"
-                                className={clsx(btnCss, currentPage === "contact" ? "bg-secondary text-black" : "text-secondary")}
+                                className={clsx(btnCss, currentPage === "contact" ? "bg-gris " : "text-gris")}
                                 onClick={handleClickContact}
                             >
                                 Contact

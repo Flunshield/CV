@@ -9,7 +9,7 @@ const Competence = () => {
         <Layout>
             <div className={clsx(isMobile ? "m-4" : "mt-60 m-10", "flex flex-col items-center")}>
                 <div className="mb-5">
-                    <h2 className="text-4xl font-bold text-secondary mb-6">Mes soft skills</h2>
+                    <h2 className="text-4xl font-bold text-center text-secondary mb-6">Mes soft skills</h2>
                     <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {TAB_SOFT_SKILS.map((competence, index) => (
                             <motion.li
@@ -30,7 +30,7 @@ const Competence = () => {
                     </ul>
                 </div>
                 <div className="mt-8">
-                    <h2 className="text-4xl font-bold text-secondary mb-6">Mes hard skills</h2>
+                    <h2 className="text-4xl font-bold text-center text-secondary mb-6">Mes hard skills</h2>
                     <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {TAB_HARD_SKILS.map((competence, index) => (
                             <motion.li

@@ -3,7 +3,7 @@ export const goToMap = () => {
 }
 
 export const goToEmail = () => {
-    window.open('mailto:j.bertrand.sin@gmail.com', '_blank');
+    window.open('mailto:j.bertrand.sin@gmail.com&subject=Prise de contact', '_blank');
 }
 
 export const goToPhone = () => {

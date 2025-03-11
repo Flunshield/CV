@@ -37,7 +37,7 @@ const HeaderOrdinateur: React.FC<HeaderOrdinateurProps> = ({
                         handleClickContact={handleClickContact}
                         btnCss={btnCss}/>
                     :
-                    <div className="flex start-0 top-0 absolute w-full bg-gray-800 text-gray-100">
+                    <div className="flex start-0 top-0 absolute pb-6 pt-6 max-md:pt-0 max-md:pb-0 w-full bg-gray-800 text-gray-100">
                         <div className="flex justify-between w-full">
                             <a className="text-2xl m-3 font-bold ml-10" href="/">BERTRAND Julien</a>
                             <div className="flex flex-col sm:flex-row">
