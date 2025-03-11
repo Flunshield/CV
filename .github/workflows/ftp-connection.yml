@@ -63,6 +63,11 @@ jobs:
         with:
           name: dist
 
+      - name: Extraire l'artefact dist
+        run: |
+          mkdir -p dist
+          unzip dist.zip -d dist
+
       - name: Vérifier si le dossier dist existe
         run: |
           if [ -d "./dist" ]; then
