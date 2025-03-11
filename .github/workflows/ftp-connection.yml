@@ -90,7 +90,6 @@ jobs:
           quote USER hc1opp_juju84350
           quote PASS ${{ secrets.FTP_PASSWORD }}
           # Vérifier que le fichier existe avant de le télécharger
-          cd ..
           put index.html
           bye
           END_SCRIPT
@@ -102,9 +101,6 @@ jobs:
           quote USER hc1opp_juju84350
           quote PASS ${{ secrets.FTP_PASSWORD }}
           # Créer le dossier assets si nécessaire et télécharger les fichiers
-          cd ..
-          mkdir assets
-          cd assets
-          mput ./assets/*
+          mput assets/*
           bye
           END_SCRIPT
