@@ -65,8 +65,12 @@ jobs:
 
       - name: Extraire l'artefact dist
         run: |
-          mkdir -p dist
-          unzip dist.zip -d dist
+          # Vérifier les fichiers téléchargés
+          artifact_file=$(ls *.zip)
+          echo "Le fichier ZIP trouvé est : $artifact_file"
+          
+          # Extraire le fichier ZIP trouvé
+          unzip "$artifact_file" -d dist
 
       - name: Vérifier si le dossier dist existe
         run: |
