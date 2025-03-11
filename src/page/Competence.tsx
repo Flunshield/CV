@@ -7,7 +7,7 @@ import { motion } from "framer-motion"; // Importation de framer-motion
 const Competence = () => {
     return (
         <Layout>
-            <div className={clsx(isMobile ? "m-4" : "mt-60 m-10", "flex flex-col items-center")}>
+            <div className={clsx(isMobile ? "m-4" : "sm:mt-64 md:mt-56 lg:mt-44 mt-32 m-10", "flex flex-col items-center")}>
                 <div className="mb-5">
                     <h2 className="text-4xl font-bold text-center text-secondary mb-6">Mes soft skills</h2>
                     <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
