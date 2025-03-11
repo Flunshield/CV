@@ -23,7 +23,7 @@ jobs:
         run: npm run build
 
       - name: Upload dist folder
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: dist
           path: ./dist
@@ -35,8 +35,8 @@ jobs:
     steps:
       - name: Delete existing files from FTP server
         run: |
-          ftp -n -v jbertrand.fr <<END_SCRIPT
-          quote USER hc1opp_juju84350
+          ftp -n -v ${{ secrets.FTP_HOST }} <<END_SCRIPT
+          quote USER ${{ secrets.FTP_USER }}
           quote PASS ${{ secrets.FTP_PASSWORD }}
           binary
           delete index.html
@@ -53,15 +53,15 @@ jobs:
     needs: delete
     steps:
       - name: Download dist folder
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: dist
 
       - name: FTP Upload
         run: |
           # Now you can use the downloaded dist folder
-          ftp -n -v jbertrand.fr <<END_SCRIPT
-          quote USER hc1opp_juju84350
+          ftp -n -v ${{ secrets.FTP_HOST }} <<END_SCRIPT
+          quote USER ${{ secrets.FTP_USER }}
           quote PASS ${{ secrets.FTP_PASSWORD }}
           put ./dist/index.html index.html
           cd assets
@@ -69,4 +69,3 @@ jobs:
           mput *  
           bye
           END_SCRIPT
-
