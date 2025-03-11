@@ -61,10 +61,10 @@ jobs:
           quote USER hc1opp_juju84350
           quote PASS ${{ secrets.FTP_PASSWORD }}
           binary
-          lcd ./dist
-          put index.html
-          cd assets
-          lcd assets
-  #         mput *
-  #         bye
-  #         END_SCRIPT
+          lcd ./dist  # Change local directory to dist
+          put index.html  # Upload the index.html file
+          cd assets  # Navigate to the assets directory on the FTP server
+          lcd ./dist/assets  # Change local directory to dist/assets
+          mput *  # Upload all files from the local assets folder
+          bye
+          END_SCRIPT
