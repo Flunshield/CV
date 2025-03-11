@@ -45,26 +45,26 @@ jobs:
           END_SCRIPT
 
   # Job Copy : Téléverser les nouveaux fichiers sur le serveur FTP
-  copy:
-    runs-on: ubuntu-latest
-    needs: delete  # Le job 'copy' dépend du job 'delete'
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+  # copy:
+  #   runs-on: ubuntu-latest
+  #   needs: delete  # Le job 'copy' dépend du job 'delete'
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v2
 
-      - name: Install FTP client
-        run: sudo apt-get install -y ftp
+  #     - name: Install FTP client
+  #       run: sudo apt-get install -y ftp
 
-      - name: Upload new files to FTP server
-        run: |
-          ftp -n -v jbertrand.fr <<END_SCRIPT
-          quote USER hc1opp_juju84350
-          quote PASS ${{ secrets.FTP_PASSWORD }}
-          binary
-          lcd ./dist
-          put index.html
-          cd assets
-          lcd assets
-          mput *
-          bye
-          END_SCRIPT
+  #     - name: Upload new files to FTP server
+  #       run: |
+  #         ftp -n -v jbertrand.fr <<END_SCRIPT
+  #         quote USER hc1opp_juju84350
+  #         quote PASS ${{ secrets.FTP_PASSWORD }}
+  #         binary
+  #         lcd ./dist
+  #         put index.html
+  #         cd assets
+  #         lcd assets
+  #         mput *
+  #         bye
+  #         END_SCRIPT
