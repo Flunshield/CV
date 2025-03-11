@@ -62,14 +62,7 @@ jobs:
 
       - name: Upload new files to FTP server
         run: |
-          ftp -n -v jbertrand.fr <<END_SCRIPT
-          quote USER hc1opp_juju84350
-          quote PASS ${{ secrets.FTP_PASSWORD }}
-          binary
-          lcd ./dist  # Change local directory to dist
-          put index.html  # Upload the index.html file
-          cd assets  # Navigate to the assets directory on the FTP server
-          lcd ./dist/assets  # Change local directory to dist/assets
-          mput *  # Upload all files from the local assets folder
-          bye
-          END_SCRIPT
+          # Téléverse index.html
+          lftp -u "$hc1opp_juju84350","${{ secrets.FTP_PASSWORD }}" "$jbertrand.fr" -e "put ./dist/index.html -o index.html; bye"
+          # Téléverse les fichiers dans le dossier assets
+          lftp -u "$hc1opp_juju84350","${{ secrets.FTP_PASSWORD }}" "$jbertrand.fr" -e "mirror -R --parallel=5 ./dist/assets/ assets/; bye"
