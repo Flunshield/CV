@@ -8,9 +8,9 @@ import {
     PROJECTS_URL,
     LINKEDIN_URL,
     GITHUB_URL,
-    CONDITION_GENERALES_URL
+    CONDITION_GENERALES_URL, CV_URL
 } from "../../constante.ts";
-import {FaEnvelope, FaMapMarkerAlt, FaPhone, FaLinkedin, FaGithub} from 'react-icons/fa'; // Importez les icônes nécessaires
+import {FaEnvelope, FaMapMarkerAlt, FaPhone, FaLinkedin, FaGithub, FaBook} from 'react-icons/fa'; // Importez les icônes nécessaires
 import {goToEmail, goToMap, goToPhone} from "../../project/helper.ts";
 import clsx from 'clsx';
 import { isMobile } from 'react-device-detect';
@@ -51,6 +51,9 @@ const Footer: React.FC<FooterProps> = () => {
                         </a>
                         <a href={GITHUB_URL} target="_blank" className="flex items-center text-sm hover:underline" rel="noreferrer">
                             <FaGithub className="mr-2"/> GitHub
+                        </a>
+                        <a href={CV_URL} target="_blank" className="flex items-center text-sm hover:underline" rel="noreferrer">
+                            <FaBook className="mr-2"/> Mon cv
                         </a>
                     </div>
             <div className="flex flex-row text-sm justify-end mt-4 mb-4">
