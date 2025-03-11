@@ -60,10 +60,6 @@ jobs:
       - name: Install FTP client
         run: sudo apt-get install -y ftp
 
-      - name: Create file list for mput
-        run: |
-          ls ./dist/assets/* > filelist.txt  # Crée une liste de fichiers dans ./dist/assets
-
       - name: Upload new files to FTP server
         run: |
           ftp -n -v jbertrand.fr <<END_SCRIPT
@@ -74,6 +70,6 @@ jobs:
           put index.html  # Upload the index.html file
           cd assets  # Navigate to the assets directory on the FTP server
           lcd ./dist/assets  # Change local directory to dist/assets
-          mput $(cat filelist.txt)  # Upload files listed in filelist.txt
+          mput *  # Upload all files from the local assets folder
           bye
           END_SCRIPT
