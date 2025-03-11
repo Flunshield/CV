@@ -39,6 +39,7 @@ jobs:
           delete index.html
           cd assets
           mdelete *
+          mdelete *.png
           cd ..
           bye
           END_SCRIPT
