@@ -10,24 +10,20 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
       # Installer Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'  # Choisir la version de Node.js que vous voulez (ici version 18)
-
-      - name: List files in the current directory (for debugging)
-        run: ls -la /home/runner/work/CV
+          node-version: '18'
 
       - name: Install dependencies
-        run: |
-          cd /home/runner/work/CV  # Aller dans le bon répertoire
-          npm install
+        run: npm install
 
       - name: Build the project
-        run: |
-          cd /home/runner/work/CV  # Aller dans le bon répertoire
-          npm run build
+        run: npm run build
 
       - name: Upload dist folder
         uses: actions/upload-artifact@v4
