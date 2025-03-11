@@ -60,15 +60,23 @@ jobs:
         with:
           name: dist
 
-      - name: FTP Upload
+      - name: Upload index.html to the root directory of FTP server
         run: |
-          # Now you can use the downloaded dist folder
           ftp -n -v jbertrand.fr <<END_SCRIPT
           quote USER hc1opp_juju84350
           quote PASS ${{ secrets.FTP_PASSWORD }}
+          # Téléchargement du fichier index.html à la racine du serveur FTP
           put ./dist/index.html index.html
+          bye
+          END_SCRIPT
+  
+      - name: Upload assets folder to the assets directory of FTP server
+        run: |
+          ftp -n -v jbertrand.fr <<END_SCRIPT
+          quote USER hc1opp_juju84350
+          quote PASS ${{ secrets.FTP_PASSWORD }}
+          # Téléchargement des fichiers du dossier assets dans le dossier assets sur le serveur FTP
           cd assets
-          lcd ./dist/assets
-          mput *  
+          mput ./dist/assets/*
           bye
           END_SCRIPT
