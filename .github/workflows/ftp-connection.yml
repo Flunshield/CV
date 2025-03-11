@@ -40,8 +40,8 @@ jobs:
     steps:
       - name: Delete existing files from FTP server
         run: |
-          ftp -n -v jbertrand.fr <<END_SCRIPT
-          quote USER hc1opp_juju84350
+          ftp -n -v ${{ secrets.HOST_FTP }} <<END_SCRIPT
+          quote USER ${{ secrets.USER_FTP }}
           quote PASS ${{ secrets.FTP_PASSWORD }}
           binary
           delete index.html
@@ -86,8 +86,8 @@ jobs:
       # Téléverser le fichier index.html à la racine du serveur FTP
       - name: Upload index.html to the root directory of FTP server
         run: |
-          ftp -n -v jbertrand.fr <<END_SCRIPT
-          quote USER hc1opp_juju84350
+          ftp -n -v  ${{ secrets.HOST_FTP }} <<END_SCRIPT
+          quote USER ${{ secrets.USER_FTP }}
           quote PASS ${{ secrets.FTP_PASSWORD }}
           # Vérifier que le fichier existe avant de le télécharger
           put index.html
@@ -100,4 +100,4 @@ jobs:
       # Téléverser les fichiers du dossier assets sur le serveur FTP
       - name: Upload assets folder to the assets directory of FTP server
         run: |
-          lftp -u hc1opp_juju84350,${{ secrets.FTP_PASSWORD }} -e "mirror -R assets /assets; bye" jbertrand.fr
+          lftp -u ${{ secrets.USER_FTP }},${{ secrets.FTP_PASSWORD }} -e "mirror -R assets /assets; bye" ${{ secrets.HOST_FTP }}
