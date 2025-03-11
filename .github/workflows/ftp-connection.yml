@@ -38,7 +38,7 @@ jobs:
           binary
           delete index.html
           cd assets
-          rm -rf *
+          mdelete *
           cd ..
           bye
           END_SCRIPT
