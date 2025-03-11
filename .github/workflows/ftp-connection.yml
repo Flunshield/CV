@@ -63,14 +63,25 @@ jobs:
         with:
           name: dist
 
+      - name: Afficher tous les fichiers téléchargés
+        run: |
+          echo "Voici les fichiers téléchargés :"
+          ls -la
+
       - name: Extraire l'artefact dist
         run: |
-          # Vérifier les fichiers téléchargés
-          artifact_file=$(ls *.zip)
-          echo "Le fichier ZIP trouvé est : $artifact_file"
+          # Lister tous les fichiers pour vérifier le fichier téléchargé
+          files=$(ls)
+          echo "Les fichiers téléchargés sont : $files"
           
-          # Extraire le fichier ZIP trouvé
-          unzip "$artifact_file" -d dist
+          # Si un fichier ZIP est trouvé, l'extraire
+          for file in $files; do
+            if [[ $file == *.zip ]]; then
+              unzip "$file" -d dist
+              echo "Artefact extrait : $file"
+              break
+            fi
+          done
 
       - name: Vérifier si le dossier dist existe
         run: |
