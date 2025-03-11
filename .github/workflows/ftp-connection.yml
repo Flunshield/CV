@@ -101,6 +101,6 @@ jobs:
           quote USER hc1opp_juju84350
           quote PASS ${{ secrets.FTP_PASSWORD }}
           # Créer le dossier assets si nécessaire et télécharger les fichiers
-          mput assets/*
+          mput assets/* -i
           bye
           END_SCRIPT
