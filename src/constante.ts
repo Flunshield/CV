@@ -221,6 +221,15 @@ export const EXPERIENCES = [
 // PROJETS
 export const PROJETS = [
     {
+        id: 14,
+        title: "Scrappy.py",
+        commentaire: "Script de scrapping de données",
+        description: "Ce script Python permet de scraper les données du célèbre dataset Iris Flower Dataset directement à partir de la page Wikipedia Iris flower data set. Le script extrait le tableau contenant les informations sur les fleurs Iris (longueur et largeur des sépales et pétales pour 3 espèces de fleurs Iris) et le sauvegarde dans un fichier CSV pour une utilisation ou analyse ultérieure.",
+        technologies: ["Python"],
+        githubLink: "https://github.com/Flunshield/scrappy.py",
+        demoLink: ""
+    },
+    {
         id: 13,
         title: "CodeArena-Frontend",
         commentaire: "Projet CodeArena FRONT / Développé dans le cadre de mon projet de première année en Mastère ESI.",
