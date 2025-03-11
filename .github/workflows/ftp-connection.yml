@@ -57,12 +57,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install FTP client
-        run: sudo apt-get install -y ftp
+      - name: Install lftp
+        run: sudo apt-get install -y lftp
 
-      - name: Upload new files to FTP server
+      - name: Upload index.html and assets to FTP server
         run: |
           # Téléverse index.html
           lftp -u "$hc1opp_juju84350","${{ secrets.FTP_PASSWORD }}" "$jbertrand.fr" -e "put ./dist/index.html -o index.html; bye"
+
           # Téléverse les fichiers dans le dossier assets
           lftp -u "$hc1opp_juju84350","${{ secrets.FTP_PASSWORD }}" "$jbertrand.fr" -e "mirror -R --parallel=5 ./dist/assets/ assets/; bye"
