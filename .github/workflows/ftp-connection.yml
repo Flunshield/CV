@@ -38,8 +38,8 @@ jobs:
     steps:
       - name: Delete existing files from FTP server
         run: |
-          ftp -n -v ${{ secrets.jbertrand.fr }} <<END_SCRIPT
-          quote USER ${{ secrets.hc1opp_juju84350 }}
+          ftp -n -v jbertrand.fr <<END_SCRIPT
+          quote USER hc1opp_juju84350
           quote PASS ${{ secrets.FTP_PASSWORD }}
           binary
           delete index.html
@@ -63,8 +63,8 @@ jobs:
       - name: FTP Upload
         run: |
           # Now you can use the downloaded dist folder
-          ftp -n -v ${{ secrets.jbertrand.fr }} <<END_SCRIPT
-          quote USER ${{ secrets.hc1opp_juju84350 }}
+          ftp -n -v jbertrand.fr <<END_SCRIPT
+          quote USER hc1opp_juju84350
           quote PASS ${{ secrets.FTP_PASSWORD }}
           put ./dist/index.html index.html
           cd assets
