@@ -23,7 +23,9 @@ jobs:
         run: npm install
 
       - name: Build the project
-        run: npm run build
+        run: |
+          npm run build
+          ls
 
       - name: Upload dist folder
         uses: actions/upload-artifact@v4
@@ -59,15 +61,16 @@ jobs:
       - name: Download dist folder
         uses: actions/download-artifact@v4
         with:
-          name: dist  # Assurez-vous que le nom de l'artefact correspond
+          name: dist
 
-      # Afficher le contenu du répertoire dist pour vérifier les fichiers présents
-      - name: List dist contents
+      - name: Vérifier si le dossier dist existe
         run: |
-          cd ..
-          pwd
-          cd /dist
-          ls
+          if [ -d "./dist" ]; then
+            echo "Le dossier dist existe."
+          else
+            echo "Le dossier dist n'existe pas."
+            exit 1
+          fi
 
       # Téléverser le fichier index.html à la racine du serveur FTP
       - name: Upload index.html to the root directory of FTP server
