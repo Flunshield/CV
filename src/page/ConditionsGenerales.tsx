@@ -1,10 +1,13 @@
 import Layout from 'components/ComposantsCommun/Layout';
 import React from 'react';
+import clsx from "clsx";
+import {isMobile} from "react-device-detect";
 
 const ConditionsGenerales: React.FC = () => {
+
     return (
         <Layout>
-            <div className="m-16 p-6 max-w-3xl mx-auto shadow-lg shadow-black rounded-lg text-secondary text-justify">
+            <div className={clsx( isMobile ? "" : "sm:mt-64 md:mt-56 lg:mt-44 mt-32", "m-16 p-6 max-w-3xl mx-auto shadow-lg shadow-black rounded-lg text-secondary text-justify")}>
                 <h1 className="text-3xl font-bold mb-6 text-center animate-bounce-up">Conditions Générales</h1>
                 <p className="mb-4 animate-bounce-up">
                     Bienvenue sur jbertrand.fr ! Ces conditions générales décrivent les règles et règlements pour l'utilisation de notre site web.

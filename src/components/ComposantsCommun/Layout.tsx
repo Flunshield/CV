@@ -11,9 +11,9 @@ type LayoutProps = {
 
 const Layout = ({ children }: LayoutProps) => {
     return (
-        <div className="flex flex-col w-full h-auto">
+        <div className="flex flex-col">
             <Header />
-            <main className={clsx(isMobile ? "pt-16" : "p-4", "flex-grow bg-gray-100")} id="main">
+            <main className={clsx(isMobile ? "pt-16" : "p-4", "flex-grow bg-gray-100 min-h-[1000px] box-border")} id="main">
                 <ChatBox />
                 {children}
             </main>
