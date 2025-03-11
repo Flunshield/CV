@@ -68,6 +68,7 @@ jobs:
           # Téléchargement du fichier index.html
           put ./dist/index.html index.html
           # Téléchargement des fichiers du dossier assets
-          mput ./dist/assets/*
+          mput ./dist/assets/* assets/
           bye
           END_SCRIPT
+
