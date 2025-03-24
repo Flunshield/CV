@@ -105,7 +105,7 @@ export const FORMATIONS = [
         onClick: mastereOnClick,
         RNCP: true,
         titleRNCP: "Expert en Systèmes d’Information",
-        RNCPCode: "34471",
+        RNCPCode: "40147",
     },
     {
         id: 4,
