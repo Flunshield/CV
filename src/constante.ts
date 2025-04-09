@@ -54,7 +54,7 @@ export const TAB_SOFT_SKILS = [
         "description": "Être capable de rester calme et concentré sous pression, de résoudre les problèmes de manière efficace et de maintenir un haut niveau de performance même dans des situations stressantes."
     }
 ]
-export const TAB_HARD_SKILS_PROG = ["Javascript", "Node", "Php", "Html", "Css", "C#", "Python", "Java"];
+export const TAB_HARD_SKILS_PROG = ["Javascript", "Node", "Php", "Html", "Css", "C#", "Python", "Java", "dotnet"];
 export const TAB_HARD_SKILS_FRAMEWORK = ["React", "Tailwind", "Symfony", "Strapi", "NestJs", "Express", "Bootstrap", "Laravel"];
 export const TAB_HARD_SKILS_BDD = ["PostgreSQL", "MySQL", "MongoDb", "SQLite"];
 export const TAB_HARD_SKILS_DEVOPS = ["Git", "Docker", "Jenkins", "Kubernetes", "AWS", "Azure", "Google Cloud"];
@@ -222,6 +222,15 @@ export const EXPERIENCES = [
 // PROJETS
 export const PROJETS = [
     {
+        id: 15,
+        title: "Plateforme de Gestion d'Événements",
+        commentaire: "Projet réaliser dans le cadre du cours Entity Framework",
+        description: "Ce projet consiste à développer une API REST complète pour la gestion d'événements professionnels tels que des conférences, des salons ou encore des workshops. L'objectif est de permettre une gestion centralisée et efficace des événements, des participants, des sessions, des intervenants et des lieux.",
+        technologies: ["C#", "ASP.NET Core", "Entity Framework", "MariaDb", "Docker", "Swagger", "React", "Tailwind CSS", "TypeScript"],
+        githubLink: "https://github.com/Flunshield/Entity-Framework",
+        demoLink: ""
+    },
+    {
         id: 14,
         title: "Scrappy.py",
         commentaire: "Script de scrapping de données",
@@ -356,8 +365,11 @@ export const PROJETS = [
 
 export const TECHNOLOGIES = [
     "Android",
+    "ASP.NET Core",
     "Css",
     "Docker",
+    "C#",
+    "Entity Framework",
     "Html",
     "Java",
     "MariaDb",
@@ -367,6 +379,7 @@ export const TECHNOLOGIES = [
     "Prisma",
     "Python",
     "React",
+    "Swagger",
     "Tailwind CSS",
     "TypeScript",
     "Vite",
